@@ -1,0 +1,60 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.blue_grey-blue.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <!-- Title -->
+    <span class="mdl-layout-title"><a class="title" href='/'>BitLink</a></span>
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer"></div>
+    <!-- Navigation -->
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="https://github.com/21JD21/BitLink">Github</a>
+      <a class="mdl-navigation__link" href="/about">About</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="page-content">
+    <div class="mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">How to Use</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+       <p>You need the <a href="https://21.co/"> 21 Bitcoin Computer</a> to post on and interact with this site</p>
+       <p>If you have one you can you can use the site by downloading the linkshare-client.py <a href="">here</a>
+       <p>Right now it costs 1000 satoshis to post a link and 500 to comment.  It costs 100 satoshis to upvote or downvote a link 
+       and 50 to upvote or downvote a comment.  All of the proceeds from upvotes are immediately paid to whoever posted the link or comment </p>
+       <p> You can find the server source code in <a href="https://github.com/21JD21/BitLink">this repository</a></p>
+       <p><b><u>Commands:</u></b></p>
+       <p><b> Add a link: </b></p> 
+       <p>python3 linkshare-client.py add_link &lturl&gt </p>
+       <p>optional parameters:<br> --title = &lttitle to link&gt<br>
+      --image = &lturl to image to be displayed with the posts&gt</p>
+       <p>Example used to add the first link:<br>python3 linkshare-client.py add_link http://21.co --image="https://assets.21.co/landing/img/img_device.jpg" --title="The 21 Bitcoin Computer"</p>
+       <p><b> Upvote a link: </b></p> 
+       <p>python3 linkshare-client.py upvote &lt index&gt </p>
+       <p><b> Downvote a link: </b></p> 
+       <p>python3 linkshare-client.py downvote &lt index&gt </p>
+       <p><b> Comment on a link: </b></p> 
+       <p>python3 linkshare-client.py comment &ltlink index&gt &ltcomment&gt </p>
+       <p><b> Upvote a comment: </b></p> 
+       <p>python3 linkshare-client.py upvote_comment &ltlink index&gt &ltcomment index&gt </p>
+       <p><b> Downvote a comment: </b></p> 
+       <p>python3 linkshare-client.py downvote_comment &ltlink index&gt &ltcomment index&gt </p>
+       </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/">
+          Go to Timeline
+        </a>
+      </div>
+    </div>
+  </div>
+  <div id="bottom"></div>
+</main>
+</html>

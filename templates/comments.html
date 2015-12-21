@@ -1,0 +1,111 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.blue_grey-blue.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<header class="mdl-layout__header">
+  <div class="mdl-layout__header-row">
+    <!-- Title -->
+    <span class="mdl-layout-title"><a class="title" href='/'>BitLink</a></span>
+    <!-- Add spacer, to align navigation to the right -->
+    <div class="mdl-layout-spacer"></div>
+    <!-- Navigation -->
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="https://github.com/21JD21/BitLink">Github</a>
+      <a class="mdl-navigation__link" href="/about">About</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="page-content">
+    <div class="mdl-card mdl-shadow--2dp">
+      <div class="mdl-grid">
+        <div class = "mdl-cell--1 mdl-cell--middle">
+          <table class = "arrows">
+            <tr>
+              <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="uv{{ link.post_id }}">
+                <i class="material-icons">arrow_upward</i>
+              </button>
+              <div class="mdl-tooltip" for="uv{{ link.post_id }}">
+                Use 21BC to upvote
+              </div></td>
+            </tr>
+            <tr><td>
+              <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="dv{{ link.post_id }}">
+                <i class="material-icons">arrow_downward</i>
+              </button>
+              <div class="mdl-tooltip" for="dv{{ link.post_id }}">
+                Use 21BC to downvote
+              </div></td>
+            </tr>
+          </table>
+        </div>
+        <div class="mdl-cell--1 mdl-cell--middle votes">{{ link.votes }}</div>
+        <div class="mdl-cell--2 mdl-cell--middle">
+          <img src="{{ link.image }}">
+        </div>
+        <div class="mdl-cell--6 mdl-cell--middle">
+          <table class="post">
+            <tr><td>
+              <a href="{{ link.url }}" class="link">{{ link.title }} </a>
+            </td></tr>
+            <tr><td class="details">
+              <span class="time">{{ link.time|timesince }} </span>
+              <span class="user"> Posted By: {{ link.user }}</span>
+              <span class="index"> Index: {{ link.post_id }}</span>
+            </td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="mdl-card__actions mdl-card--border" >
+        <a href = "/comments?postId={{ link.post_id }}" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect commentsButton" >
+          Comments
+        </a>
+      </div>
+    </div>
+    {% for comment in comments %}
+    <div class="mdl-card mdl-shadow--2dp comment-card">
+      <div class="mdl-grid">
+        <div class = "mdl-cell--1 mdl-cell--middle">
+          <table class = "arrows">
+            <tr>
+              <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="uv{{ comment.comment_id }}">
+                <i class="material-icons">arrow_upward</i>
+              </button>
+              <div class="mdl-tooltip" for="uv{{ comment.comment_id }}">
+                Use 21BC to upvote
+              </div></td>
+            </tr>
+            <tr><td>
+              <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" id="dv{{ comment.comment_id }}">
+                <i class="material-icons">arrow_downward</i>
+              </button>
+              <div class="mdl-tooltip" for="dv{{ comment.comment_id }}">
+                Use 21BC to downvote
+              </div></td>
+            </tr>
+          </table>
+        </div>
+        <div class="mdl-cell--1 mdl-cell--middle votes">{{ comment.votes }}</div>
+        <div class="mdl-cell--6 mdl-cell--middle text">
+          <table>
+            <tr><td>{{ comment.text }}</td></tr>
+            <tr><td>
+              <span class="details">
+                <span class="time">{{ comment.time|timesince }}</span>
+                <span class="user"> Posted by: {{ comment.user }} </span>
+                <span class="index"> Index:{{ comment.comment_id }}</span>
+              </span>
+            </td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div id="bottom"></div>
+</main>
+</html>

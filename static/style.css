@@ -1,0 +1,84 @@
+.mdl-card{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.comment-card > .mdl-card__actions{
+    height: 0px;
+}
+
+img{
+    width:150px;
+    height: 150px;
+}
+
+a{
+    text-decoration: none;
+}
+.mdl-cell{
+    float: left;
+    margin-left: 20px;
+}
+
+table{
+    margin-left: 20px;
+}
+.mdl-cell--6{
+    float: left;
+    margin-left: 20px;
+    width: 840px;
+}
+
+img{
+    margin-left: 20px;
+}
+
+.votes{
+    font-size: 36px;
+    margin-left: 20px;
+}
+
+.commentsButton{
+    float: right
+}
+
+.index{
+    margin-left: 40px;
+}
+
+.user{
+    margin-left: 40px;
+}
+
+.link{
+    font-size: 18px;
+}
+
+.comment-card{
+    width: 1000px;
+    min-height: 140px;
+}
+
+.details{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+html{
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.title{
+    color:#fff;
+}
+
+.mdl-layout-title:visited{
+    color:#fff;
+}
+
+#bottom{
+    height: 50px;
+}

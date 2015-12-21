@@ -10,7 +10,7 @@ wallet = Wallet()
 username = Config().username
 bit_requests = BitTransferRequests(wallet, username)
 
-server_url = 'http://localhost:5000/'
+server_url = 'http://70.174.36.208:8000/'
 
 
 @click.group()

@@ -6,9 +6,9 @@ from flask import Flask, request, render_template
 from database import DB
 
 #import from the 21 Developer Library
-from two1.lib.wallet import Wallet
-from two1.lib.bitserv.flask import Payment
-from two1.lib.bitserv.payment_methods import BitTransfer
+from two1.wallet import Wallet
+from two1.bitserv.flask import Payment
+from two1.bitserv.payment_methods import BitTransfer
 from two1.commands.config import Config
 
 # set up server side wallet
@@ -179,5 +179,5 @@ def pay(payee_username, price):
                          headers={'content-type': 'application/json'})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port='7777')
 
